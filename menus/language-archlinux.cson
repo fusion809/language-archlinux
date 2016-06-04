@@ -1,0 +1,16 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      {
+        'label': 'Arch Linux Commands'
+        'submenu': [
+          {
+            'label':   'Update PKGBUILD checksums'
+            'command': 'pkgbuild:updpkgsums'
+          }
+        ]
+      }
+    ]
+  }
+]

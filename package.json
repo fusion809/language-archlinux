@@ -1,0 +1,40 @@
+{
+  "name": "language-archlinux",
+  "version": "0.0.0",
+  "author": "Brenton Horne <brentonhorne77@gmail.com>",
+  "description": "Arch Linux development package",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusion809/language-archlinux"
+  },
+  "bugs": {
+    "url": "https://github.com/fusion809/language-archlinux/issues"
+  },
+  "main": "./lib/index",
+  "activationCommands": {
+    "atom-workspace": [
+      "pkgbuild:updpkgsums"
+    ],
+    "atom-text-editor": [
+      "core:save"
+    ]
+  },
+  "configSchema": {
+    "updateCheckSumsOnSave": {
+      "type": "boolean",
+      "default": false,
+      "title": "Update PKGBUILD checksums on save",
+      "description": "Update checksums in PKGBUILD on save"
+    }
+  },
+  "license": "GPLv3",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "packageDependencies": [
+    "language-unix-shell"
+  ],
+  "devDependencies": {
+    "coffee-script": "^1.8.0"
+  }
+}
