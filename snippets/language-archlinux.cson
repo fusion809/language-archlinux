@@ -1,0 +1,4 @@
+'.source.shell.pkgbuild':
+  'Default PKGBUILD Template':
+    'prefix': 'pkgd'
+    'body': '# Maintainer ${1}\n\npkgname=${2}\npkgver=${3}\npkgrel=${4}\npkgdesc="${5}"\narch=(\'i686\' \'x86_64\')\nlicense=(${7})\n\ndepends=(${8})\nmakedepends=(${9})\noptdepends=(${10})\n\ninstall=${11}.install\nsource=(${12})\nsha256sums=(${13})\n\nprepare() {\n cd $srcdir/$pkgname ${14}\n}\n\nbuild() {\n cd $srcdir/$pkgname ${15}\n}\n\npackage() {\n cd $srcdir/$pkgname ${16}\n}'
