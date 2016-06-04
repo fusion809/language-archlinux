@@ -6,7 +6,19 @@
         'label': 'Arch Linux Commands'
         'submenu': [
           {
-            'label':   'Update PKGBUILD checksums'
+            'label':   'Make package'
+            'command': 'pkgbuild:makepkg'
+          }
+          {
+            'label':   'Update SRCINFO'
+            'command': 'pkgbuild:mksrcinfo'
+          }
+          {
+            'label':   'Run namcap'
+            'command': 'pkgbuild:namcap'
+          }
+          {
+            'label':   'Update PKGBUILD'
             'command': 'pkgbuild:updpkgsums'
           }
         ]

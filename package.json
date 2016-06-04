@@ -13,6 +13,8 @@
   "main": "./lib/index",
   "activationCommands": {
     "atom-workspace": [
+      "pkgbuild:makepkg",
+      "pkgbuild:mksrcinfo",
       "pkgbuild:updpkgsums"
     ],
     "atom-text-editor": [
@@ -20,11 +22,23 @@
     ]
   },
   "configSchema": {
+    "checkPKGBUILDOnSave": {
+      "type": "boolean",
+      "default": false,
+      "title": "Check PKGBUILD for errors on save",
+      "description": "Check PKGBUILD for errors with namcap on save"
+    },
     "updateCheckSumsOnSave": {
       "type": "boolean",
       "default": false,
       "title": "Update PKGBUILD checksums on save",
       "description": "Update checksums in PKGBUILD on save"
+    },
+    "updateSrcInfoOnSave": {
+      "type": "boolean",
+      "default": false,
+      "title": "Update PKGBUILD SRCINFO on save",
+      "description": "Update SRCINFO on save"
     }
   },
   "license": "GPLv3",
