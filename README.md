@@ -1,7 +1,7 @@
 # The Arch Linux Development Package
 <img src="http://i.imgur.com/B5McvKv.png" alt="visual-studio-code-oss PKGBUILD">
-  <caption>My visual-studio-code-oss PKGBUILD being syntax-highlighted by this package and language-unix-shell and with the dark-bint-syntax theme enabled.</caption>
-</img>
+  <caption><b>Figure 1: My visual-studio-code-oss PKGBUILD being syntax-highlighted by this package and language-unix-shell and with the dark-bint-syntax theme enabled.</b></caption>
+</img><br/>
 
 This package is essentially the Arch Linux equivalent to the [`language-gentoo`](https://github.com/aegypius/language-gentoo) package of Nicolas Laurent. It provides syntax-highlighting for PKGBUILDs (with the help of the [`language-unix-shell`](https://github.com/fusion809/language-shellscript) package), along with Atom commands for running a variety of different PKGBUILD commands.
 
@@ -30,4 +30,4 @@ This package provides the following Atom commands:
 * `pkgbuild:makepkg` (default keyboard shortcut: <kbd>F6</kbd>) &mdash; builds a package using the PKGBUILD presently opened. If dependencies are missing it will fail, as it does not have root permissions to install missing dependencies.
 * `pkgbuild:mksrcinfo` (shortcut: <kbd>F7</kbd>) &mdash; generates a .SRCINFO file from the presently-opened PKGBUILD.
 * `pkgbuild:namcap` (shortcut: <kbd>F8</kbd>) &mdash; runs `namcap` on the PKGBUILD (*not* on any built packages) to check for any errors.
-* `pkgbuild:updpkgsums` (shortcut: <kbd>F9</kbd>) &mdash; runs `updpkgsums` on the PKGBUILD to update checksums listed in it. 
+* `pkgbuild:updpkgsums` (shortcut: <kbd>F9</kbd>) &mdash; runs `updpkgsums` on the PKGBUILD to update checksums listed in it.
