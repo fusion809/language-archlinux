@@ -12,18 +12,19 @@
 ]
 
 'repositories':
-  'patterns': [
-    {
-      'begin': '^\\b[_a-zA-Z0-9]*'
-      'beginCaptures':
-        '0':
-          'name': 'variable.definition.name'
-      'captures':
-        '1':
-          'name':  'variable.definition.other'
-      'end':   '='
-      'endCaptures':
-        '0':
-          'name': 'variable.definition.equal'
-    }
-  ]
+  'vardef':
+    'patterns': [
+      {
+        'begin': '^\\b[_a-zA-Z0-9]*'
+        'beginCaptures':
+          '0':
+            'name': 'variable.definition.name'
+        'captures':
+          '1':
+            'name':  'variable.definition.other'
+        'end':   '='
+        'endCaptures':
+          '0':
+            'name': 'variable.definition.equal'
+      }
+    ]
