@@ -1,7 +1,6 @@
 'name': 'PKGBUILD'
 'scopeName': 'source.shell.pkgbuild'
-'fileNames': 'PKGBUILD'
-'fileTypes': 'install'
+'fileTypes': ['PKGBUILD', 'install']
 'patterns': [
   {
     'include': 'source.shell'
