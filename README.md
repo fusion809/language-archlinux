@@ -22,7 +22,19 @@ sudo pacman -S namcap pkgbuild-introspection --noconfirm
 apm install language-unix-shell language-archlinux dark-bint-syntax --no-confirm
 ```
 
-this is assuming, of course, that Atom is already installed.
+this is assuming, of course, that Atom is already installed. `language-unix-shell` does conflict with the core package, `language-shellscript`, so to use it I recommend adding:
+
+```coffee
+    disabledPackages: [
+    "language-shellscript"
+    ]
+```
+
+to your `config.cson` file. If you do not already have Atom installed on your Arch Linux machine, you can install Atom, these pacman dependencies and these packages via running (assuming, of course, that `yaourt` is installed):
+
+```bash
+yaourt -S atom-editor-arch --noconfirm
+```
 
 ## Commands
 This package provides the following Atom commands:
