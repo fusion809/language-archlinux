@@ -41,7 +41,7 @@
       "description": "Update SRCINFO on save"
     }
   },
-  "license": "GPLv3",
+  "license": "GNU GPLv3",
   "engines": {
     "atom": ">0.50.0"
   },
