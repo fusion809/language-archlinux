@@ -11,6 +11,7 @@
     "url": "https://github.com/fusion809/language-archlinux/issues"
   },
   "main": "./lib/index",
+  "readme": "./README.md",
   "activationCommands": {
     "atom-workspace": [
       "pkgbuild:makepkg",
