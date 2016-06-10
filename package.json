@@ -1,53 +1,56 @@
 {
-  "name": "language-archlinux",
-  "version": "0.2.18",
-  "author": "Brenton Horne <brentonhorne77@gmail.com>",
-  "description": "Arch Linux development package",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fusion809/language-archlinux"
-  },
-  "bugs": {
-    "url": "https://github.com/fusion809/language-archlinux/issues"
-  },
-  "main": "./lib/index",
-  "readme": "./README.md",
-  "activationCommands": {
-    "atom-workspace": [
-      "pkgbuild:makepkg",
-      "pkgbuild:namcap",
-      "pkgbuild:mksrcinfo",
-      "pkgbuild:updpkgsums"
-    ],
-    "atom-text-editor": [
-      "core:save"
-    ]
-  },
-  "configSchema": {
-    "checkPKGBUILDOnSave": {
-      "type": "boolean",
-      "default": false,
-      "title": "Check PKGBUILD for errors on save",
-      "description": "Check PKGBUILD for errors with namcap on save"
+    "name": "language-archlinux",
+    "version": "0.2.18",
+    "author": "Brenton Horne <brentonhorne77@gmail.com>",
+    "description": "Arch Linux development package",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fusion809/language-archlinux"
     },
-    "updateCheckSumsOnSave": {
-      "type": "boolean",
-      "default": false,
-      "title": "Update PKGBUILD checksums on save",
-      "description": "Update checksums in PKGBUILD on save"
+    "bugs": {
+        "url": "https://github.com/fusion809/language-archlinux/issues"
     },
-    "updateSrcInfoOnSave": {
-      "type": "boolean",
-      "default": false,
-      "title": "Update PKGBUILD SRCINFO on save",
-      "description": "Update SRCINFO on save"
+    "main": "./lib/index",
+    "readme": "./README.md",
+    "activationCommands": {
+        "atom-workspace": [
+            "pkgbuild:makepkg",
+            "pkgbuild:namcap",
+            "pkgbuild:mksrcinfo",
+            "pkgbuild:updpkgsums"
+        ],
+        "atom-text-editor": [
+            "core:save"
+        ]
+    },
+    "configSchema": {
+        "checkPKGBUILDOnSave": {
+            "type": "boolean",
+            "default": false,
+            "title": "Check PKGBUILD for errors on save",
+            "description": "Check PKGBUILD for errors with namcap on save"
+        },
+        "updateCheckSumsOnSave": {
+            "type": "boolean",
+            "default": false,
+            "title": "Update PKGBUILD checksums on save",
+            "description": "Update checksums in PKGBUILD on save"
+        },
+        "updateSrcInfoOnSave": {
+            "type": "boolean",
+            "default": false,
+            "title": "Update PKGBUILD SRCINFO on save",
+            "description": "Update SRCINFO on save"
+        }
+    },
+    "license": "GPL-3.0",
+    "engines": {
+        "atom": ">0.50.0"
+    },
+    "dependencies": {
+        "atom-space-pen-views": "^2.0.5"
+    },
+    "devDependencies": {
+        "coffee-script": "^1.8.0"
     }
-  },
-  "license": "GPL-3.0",
-  "engines": {
-    "atom": ">0.50.0"
-  },
-  "devDependencies": {
-    "coffee-script": "^1.8.0"
-  }
 }
