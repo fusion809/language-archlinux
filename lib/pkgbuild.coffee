@@ -17,7 +17,7 @@ module.exports =
                 notifications.addSuccess "Package built!" unless err
 
     mksrcinfo: ()->
-        if activeEditor /PKGBUILD$/.test filePath
+        if activeEditor && /PKGBUILD$/.test filePath
             exec "cd #{fileDirectory} && mksrcinfo", (err, stdout, stderr)->
                 notifications.addError stderr + "cd #{fileDirectory} && mksrcinfo", dismissable: true if err
                 notifications.addSuccess ".SRCINFO updated" unless err
