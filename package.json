@@ -1,6 +1,6 @@
 {
   "name": "language-archlinux",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "author": "Brenton Horne <brentonhorne77@gmail.com>",
   "description": "Arch Linux development package",
   "repository": {
