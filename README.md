@@ -1,4 +1,5 @@
 # The Arch Linux Development Package
+[![build-status](https://travis-ci.org/fusion809/language-archlinux.svg?branch=master)](https://travis-ci.org/fusion809/language-archlinux)
 <img src="http://i.imgur.com/B5McvKv.png" alt="visual-studio-code-oss PKGBUILD">
   <caption><b>Figure 1: My visual-studio-code-oss PKGBUILD being syntax-highlighted by this package and language-unix-shell and with the dark-bint-syntax theme enabled.</b></caption>
 </img><br/>
