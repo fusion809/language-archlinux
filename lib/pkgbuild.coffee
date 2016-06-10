@@ -1,15 +1,15 @@
 {exec} = require "child_process"
 activeEditor = atom.workspace.getActiveTextEditor()
 notifications = atom.notifications
-if activeEditor
-    filePath = activeEditor.getPath().split(" ").join("\\ ")
-    fileDirectory = String(filePath).split('/')
-    fileDirectory.pop()
-    fileDirectory = fileDirectory.join("/")
 
 module.exports =
     makepkg: ()->
         if activeEditor
+            filePath = activeEditor.getPath().split(" ").join("\\ ")
+            fileDirectory = String(filePath).split('/')
+            fileDirectory.pop()
+            fileDirectory = fileDirectory.join("/")
+
             if /PKGBUILD$/.test filePath
                 exec "cd #{fileDirectory} && makepkg -f", (err, stdout, stderr)->
                     notifications.addError stderr + "filePath is #{filePath}; fileDirectory is #{fileDirectory}", dismissable: true if err
@@ -17,6 +17,10 @@ module.exports =
 
     mksrcinfo: ()->
         if activeEditor
+            filePath = activeEditor.getPath().split(" ").join("\\ ")
+            fileDirectory = String(filePath).split('/')
+            fileDirectory.pop()
+            fileDirectory = fileDirectory.join("/")
             if /PKGBUILD$/.test filePath
                 exec "cd #{fileDirectory} && mksrcinfo", (err, stdout, stderr)->
                     notifications.addError stderr, dismissable: true if err
@@ -24,6 +28,10 @@ module.exports =
 
     namcap: ()->
         if activeEditor
+            filePath = activeEditor.getPath().split(" ").join("\\ ")
+            fileDirectory = String(filePath).split('/')
+            fileDirectory.pop()
+            fileDirectory = fileDirectory.join("/")
             if /PKGBUILD$/.test filePath
                 exec "namcap #{filePath}", (err, stdout, stderr)->
                     notifications.addError stderr, dismissable: true if err
@@ -31,6 +39,10 @@ module.exports =
 
     updpkgsums: ()->
         if activeEditor
+            filePath = activeEditor.getPath().split(" ").join("\\ ")
+            fileDirectory = String(filePath).split('/')
+            fileDirectory.pop()
+            fileDirectory = fileDirectory.join("/")
             if /PKGBUILD$/.test filePath
                 exec "updpkgsums #{filePath}", (err, stdout, stderr)->
                     notifications.addError stderr, dismissable: true if err
