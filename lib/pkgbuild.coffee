@@ -13,7 +13,7 @@ module.exports =
 
       if /PKGBUILD$/.test filePath
         exec "cd #{fileDirectory} && makepkg", (err, stdout, stderr)->
-          notifications.addError stderr, dismissable: true if err
+          notifications.addError stderr + "filePath is #{filePath}; fileDirectory is #{fileDirectory}", dismissable: true if err
           notifications.addSuccess "Package built!" unless err
 
   mksrcinfo: ()->
