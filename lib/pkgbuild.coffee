@@ -7,7 +7,7 @@ module.exports =
 
     if activeEditor
       filePath      = activeEditor.getPath()
-      fileDirectory = filePath.split('/')
+      fileDirectory = String(filePath).split('/')
       fileDirectory.pop()
       fileDirectory = fileDirectory.join('/')
 
@@ -22,7 +22,7 @@ module.exports =
 
     if activeEditor
       filePath      = activeEditor.getPath()
-      fileDirectory = filePath.split('/')
+      fileDirectory = String(filePath).split('/')
       fileDirectory.pop()
       fileDirectory = fileDirectory.join('/')
 
@@ -37,7 +37,7 @@ module.exports =
 
     if activeEditor
       filePath = activeEditor.getPath()
-      fileDirectory = filePath.split('/')
+      fileDirectory = String(filePath).split('/')
       fileDirectory.pop()
       fileDirectory = fileDirectory.join('/')
 
