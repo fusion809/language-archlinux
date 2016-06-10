@@ -11,7 +11,7 @@ module.exports =
     makepkg: ()->
         if activeEditor
             if /PKGBUILD$/.test filePath
-                exec "cd #{fileDirectory} && makepkg", (err, stdout, stderr)->
+                exec "cd #{fileDirectory} && makepkg -f", (err, stdout, stderr)->
                     notifications.addError stderr + "filePath is #{filePath}; fileDirectory is #{fileDirectory}", dismissable: true if err
                     notifications.addSuccess "Package built!" unless err
 
