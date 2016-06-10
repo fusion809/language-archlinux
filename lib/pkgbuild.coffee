@@ -25,7 +25,7 @@ module.exports =
       fileDirectory = String(filePath).split('/')
       fileDirectory.pop()
       fileDirectory = fileDirectory.join('/')
-      fileDirectory = fileDirectory.replace(/ /g,"\ ")
+      fileDirectory = fileDirectory.replace(' ','\ ')
 
       if /PKGBUILD$/.test filePath
         exec "cd #{fileDirectory} && mksrcinfo", (err, stdout, stderr)->
