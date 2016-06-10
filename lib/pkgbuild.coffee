@@ -10,6 +10,8 @@ module.exports =
       fileDirectory = String(filePath).split('/')
       fileDirectory.pop()
       fileDirectory = fileDirectory.join('/')
+      fileDirectory = fileDirectory.split(' ')
+      fileDirectory = fileDirectory.join('\ ')
 
       if /PKGBUILD$/.test filePath
         exec "cd #{fileDirectory} && makepkg", (err, stdout, stderr)->
