@@ -15,6 +15,7 @@
   "activationCommands": {
     "atom-workspace": [
       "pkgbuild:makepkg",
+      "pkgbuild:namcap",
       "pkgbuild:mksrcinfo",
       "pkgbuild:updpkgsums"
     ],

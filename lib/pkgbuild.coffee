@@ -23,7 +23,7 @@ module.exports =
             fileDirectory = fileDirectory.join("/")
             if /PKGBUILD$/.test filePath
                 exec "cd #{fileDirectory} && mksrcinfo", (err, stdout, stderr)->
-                    notifications.addError stderr, dismissable: true if err
+                    notifications.addError stderr + "cd #{fileDirectory} && mksrcinfo", dismissable: true if err
                     notifications.addSuccess ".SRCINFO updated" unless err
 
     namcap: ()->
@@ -34,7 +34,7 @@ module.exports =
             fileDirectory = fileDirectory.join("/")
             if /PKGBUILD$/.test filePath
                 exec "namcap #{filePath}", (err, stdout, stderr)->
-                    notifications.addError stderr, dismissable: true if err
+                    notifications.addError stderr + "command is: namcap #{filePath}", dismissable: true if err
                     notifications.addSuccess "Your PKGBUILD seems fine.\nBuild a package from it and run namcap \non said package to perform further checks." unless err
 
     updpkgsums: ()->
@@ -45,5 +45,5 @@ module.exports =
             fileDirectory = fileDirectory.join("/")
             if /PKGBUILD$/.test filePath
                 exec "updpkgsums #{filePath}", (err, stdout, stderr)->
-                    notifications.addError stderr, dismissable: true if err
+                    notifications.addError stderr + "command is: updpkgsums #{filePath}", dismissable: true if err
                     notifications.addSuccess "PKGBUILD checksums updated" unless err
