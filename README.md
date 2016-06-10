@@ -40,7 +40,7 @@ yaourt -S atom-editor-arch --noconfirm
 ## Commands
 This package provides the following Atom commands:
 
-* `pkgbuild:makepkg` (default keyboard shortcut: <kbd>F6</kbd>) &mdash; builds a package using the PKGBUILD presently opened. If dependencies are missing it will fail, as it does not have root permissions to install missing dependencies.
+* `pkgbuild:makepkg` (default keyboard shortcut: <kbd>F6</kbd>) &mdash; builds a package using the PKGBUILD presently opened. If dependencies (including build dependencies) are missing it will fail, as it does not have the necessary root permissions to install missing dependencies.
 * `pkgbuild:mksrcinfo` (shortcut: <kbd>F7</kbd>) &mdash; generates a .SRCINFO file from the presently-opened PKGBUILD.
 * `pkgbuild:namcap` (shortcut: <kbd>F8</kbd>) &mdash; runs `namcap` on the PKGBUILD (*not* on any built packages) to check for any errors.
 * `pkgbuild:updpkgsums` (shortcut: <kbd>F9</kbd>) &mdash; runs `updpkgsums` on the PKGBUILD to update checksums listed in it.
