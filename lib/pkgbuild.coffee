@@ -28,7 +28,7 @@ module.exports =
 
     namcap: ()->
         if activeEditor
-            filePath = activeEditor.getPath().split(" ").join("\\ ")
+            filePath = activeEditor.getPath()
             fileDirectory = String(filePath).split('/')
             fileDirectory.pop()
             fileDirectory = fileDirectory.join("/")

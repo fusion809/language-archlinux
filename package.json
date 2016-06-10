@@ -46,9 +46,6 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "packageDependencies": [
-    "language-unix-shell"
-  ],
   "devDependencies": {
     "coffee-script": "^1.8.0"
   }
