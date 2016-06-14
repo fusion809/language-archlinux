@@ -4,7 +4,7 @@
   <caption><b>Figure 1: My visual-studio-code-oss PKGBUILD being syntax-highlighted by this package and language-unix-shell and with the dark-bint-syntax theme enabled.</b></caption>
 </img><br/>
 
-This package is essentially the Arch Linux equivalent to the [`language-gentoo`](https://github.com/aegypius/language-gentoo) package of Nicolas Laurent. It provides syntax-highlighting for PKGBUILDs (with the help of the [`language-unix-shell`](https://github.com/fusion809/language-shellscript) package), along with Atom commands for running a variety of different PKGBUILD commands.
+This package is essentially the Arch Linux equivalent to the [`language-gentoo`](https://github.com/aegypius/language-gentoo) package of Nicolas Laurent. It provides Atom commands for running a variety of different PKGBUILD commands. It previously provided syntax-highlighting for PKGBUILDs (with the help of the [`language-unix-shell`](https://github.com/fusion809/language-shellscript) package) although as of v0.3.0 this feature is now entirely provided by `language-unix-shell`.
 
 ## Dependencies
 Beware that you will need to have the following Linux packages installed in order for this package to have its full functionalities:
