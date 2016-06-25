@@ -1,5 +1,8 @@
 {$, TextEditorView, View} = require 'atom-space-pen-views'
+path = require "path"
 {exec} = require "child_process"
+name = atom.config.get 'language-archlinux.username'
+email = atom.config.get 'language-archlinux.email'
 activeEditor = atom.workspace.getActiveTextEditor()
 notifications = atom.notifications
 LoadingView = null
@@ -16,7 +19,7 @@ module.exports =
     class pkgInputView extends View
         detaching: false
         @content: ->
-            @div class: 'command-palette', =>
+            @div class: 'command-palette', "Please enter the name of the AUR package you wish to create.", =>
                 @subview 'selectEditor', new TextEditorView(mini: true)
 
         initialize: ->
@@ -44,11 +47,14 @@ module.exports =
             pkg = @selectEditor.getText()
             LoadingView ?= require "./loading-view"
             loadingView ?= new LoadingView()
+            dirname = path.join(__dirname, '..')
             loadingView.show()
-            exec "git clone ssh+git://aur@aur.archlinux.org/#{pkg}.git #{fileDirectory}/#{pkg}", (err, stdout, stderr)->
+            exec "git clone ssh+git://aur@aur.archlinux.org/#{pkg}.git #{fileDirectory}/#{pkg} && if ! [ -f #{fileDirectory}/#{pkg}/PKGBUILD ]; then cp #{dirname}/resources/PKGBUILD #{fileDirectory}/#{pkg}/PKGBUILD && sed -i -e 's/<%-PKG-%>/#{pkg}/g' -e 's/<%-NAME-%>/#{name}/g' -e 's/<%-EMAIL-%>/#{email}/g' #{fileDirectory}/#{pkg}/PKGBUILD; fi", (err, stdout, stderr)->
               loadingView?.hide()
-              notifications.addError stderr + "command is: git clone ssh+git://aur@aur.archlinux.org/#{pkg}.git #{fileDirectory}/#{pkg}", dismissable: true if err
+              notifications.addError "#{err}", dismissable: true if err
               notifications.addSuccess "#{pkg}'s AUR git repository has been cloned to #{fileDirectory}/#{pkg}" unless err
+              pkgpath = "#{fileDirectory}/#{pkg}/PKGBUILD"
+              atom.workspace.open(pkgpath) unless err
             @detach()
 
         attach: ->

@@ -1,14 +1,14 @@
-{exec} = require "child_process"
-pkgInputView = require('./pkgInputView')
-activeEditor = atom.workspace.getActiveTextEditor()
+{exec}        = require("child_process")
+pkgInputView  = require('./pkgInputView')
+activeEditor  = atom.workspace.getActiveTextEditor()
 notifications = atom.notifications
-LoadingView = null
-loadingView = null
+LoadingView   = null
+loadingView   = null
 
 if activeEditor
-    filePath = activeEditor.getPath().split(" ").join("\\ ")
+    filePath      = activeEditor.getPath().split(" ").join("\\ ")
     fileDirectory = String(filePath).split('/')
-    fileName = fileDirectory[fileDirectory.length - 1]
+    fileName      = fileDirectory[fileDirectory.length - 1]
     fileDirectory.pop()
     fileDirectory = fileDirectory.join("/")
 
@@ -42,4 +42,3 @@ module.exports =
 
     newpkg: ()->
         @newpkgview = new pkgInputView()
-        

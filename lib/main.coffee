@@ -1,12 +1,13 @@
-activeEditor = atom.workspace.getActiveTextEditor()
+activeEditor      = atom.workspace.getActiveTextEditor()
 
 if activeEditor
     fileDirectory = String(activeEditor.getPath().split(" ").join("\\ ")).split('/')
-    fileName = fileDirectory[fileDirectory.length - 1].trim()
+    fileName      = fileDirectory[fileDirectory.length - 1].trim()
 
 module.exports =
+
     activate: (state) ->
-        {makepkg,mksrcinfo,namcap,updpkgsums,newpkg} = require "./pkgbuild"
+        {makepkg,mksrcinfo,namcap,updpkgsums,newpkg,aurup} = require "./pkgbuild"
         atom.commands.add 'atom-text-editor',
             "pkgbuild:makepkg": -> makepkg()
             "pkgbuild:mksrcinfo": -> mksrcinfo()

@@ -9,6 +9,7 @@ This package is essentially the Arch Linux equivalent to the [`language-gentoo`]
 ## Dependencies
 Beware that you will need to have the following Linux packages installed in order for this package to have its full functionalities:
 
+* `git`
 * `namcap`
 * `pacman` &mdash; which, of course, means you should be operating on Arch Linux or another platform that uses the pacman package manager.
 * `pkgbuild-introspection`
@@ -38,10 +39,13 @@ yaourt -S atom-editor-arch --noconfirm
 ```
 
 ## Commands
-This package provides the following Atom commands:
+This package provides the following Atom commands (each can be accessed via the command pallette, which is opened by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>):
 
 * `pkgbuild:makepkg` (default keyboard shortcut: <kbd>F5</kbd>) &mdash; builds a package using the PKGBUILD presently opened. If dependencies (including build dependencies) are missing it will fail, as it does not have the necessary root permissions to install missing dependencies.
 * `pkgbuild:mksrcinfo` (shortcut: <kbd>F6</kbd>) &mdash; generates a .SRCINFO file from the presently-opened PKGBUILD.
 * `pkgbuild:namcap` (shortcut: <kbd>F7</kbd>) &mdash; runs `namcap` on the PKGBUILD (*not* on any built packages) to check for any errors.
-* `pkgbuild:newpkg` (shortcut: <kbd>F8</kbd>) &mdash; runs `git clone ssh+git://aur@aur.archlinux.org/<PACKAGE> <DIRECTORY>/<PACKAGE>` where `<DIRECTORY>` is the current working directory and `<PACKAGE>` is an input provided by the user in the command pallette box that pops up.
+* `pkgbuild:newpkg` (shortcut: <kbd>F8</kbd>) &mdash; runs `git clone ssh+git://aur@aur.archlinux.org/<PACKAGE> <DIRECTORY>/<PACKAGE>` where `<DIRECTORY>` is the current working directory and `<PACKAGE>` is an input provided by the user in the command pallette box that pops up. This command requires that you have a registered SSH key (that is, added to your AUR account) for the AUR that has been authenticated on your current system. For further information please refer to [*The ArchWiki*](https://wiki.archlinux.org/index.php/Arch_User_Repository#Sharing_and_maintaining_packages). If the package in question is not present in the AUR, it will create a blank AUR based on a template similar to the snippet provided by this package.
 * `pkgbuild:updpkgsums` (shortcut: <kbd>F9</kbd>) &mdash; runs `updpkgsums` on the PKGBUILD to update checksums listed in it.
+
+## Contributors
+A special mention goes to @bil-elmoussaoui and @DamnedScholar for their contributions to this package. 

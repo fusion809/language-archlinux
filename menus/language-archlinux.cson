@@ -6,12 +6,12 @@
         'label': 'Arch Linux Commands'
         'submenu': [
           {
-            'label':   'Make package'
-            'command': 'pkgbuild:makepkg'
-          }
-          {
             'label':   'Create an AUR package'
             'command': 'pkgbuild:newpkg'
+          }
+          {
+            'label':   'Make package'
+            'command': 'pkgbuild:makepkg'
           }
           {
             'label':   'Run namcap'

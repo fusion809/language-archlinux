@@ -10,8 +10,8 @@
   "bugs": {
     "url": "https://github.com/fusion809/language-archlinux/issues"
   },
-  "main": "./lib/index",
-  "readme": "./README.md",
+  "main": "./lib/main",
+  "readmeFilename": "README.md",
   "activationCommands": {
     "atom-workspace": [
       "pkgbuild:makepkg",
@@ -42,6 +42,18 @@
       "default": false,
       "title": "Update PKGBUILD SRCINFO on save",
       "description": "Update SRCINFO on save"
+    },
+    "username": {
+      "type": "string",
+      "default": "",
+      "title": "Your name",
+      "description": "Set the username this package will use when you create a new PKGBUILD."
+    },
+    "email": {
+      "type": "string",
+      "default": "",
+      "title": "Your spam-safe email address",
+      "description": "Set the spam-safe (encoded) email address this package will use when you create a new PKGBUILD"
     }
   },
   "license": "GPL-3.0",
