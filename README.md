@@ -59,7 +59,7 @@ This package provides the following Atom commands (each can be accessed via the 
 If you intend on creating new AUR packages with this package I would recommend you set your username and email in the configuration settings of this package. To do this go to <code>Edit&rarr;Preferences</code> and open the packages pane. Then find (scroll down if necessary) and click the `language-archlinux` package's `settings` button. Likewise in the configuration settings you can set some of these commands to run automatically upon you saving a PKGBUILD file.
 
 ## Contributors
-A special mention goes to @bil-elmoussaoui, @DamnedScholar, @Lee-Dohm and others for their contributions to this package. With the exception of @bil-elmoussaoui all these contributors helped me via answering my questions at discuss.atom.io. Without them this package would be nowhere as mature as it is now.
+A special mention goes to [@bil-elmoussaoui](https://github.com/bil-elmoussaoui), [@DamnedScholar](https://github.com/DamnedScholar), [@Lee-Dohm](https://github.com/Lee-Dohm) and others for their contributions to this package. With the exception of @bil-elmoussaoui all these contributors helped me via answering my questions at discuss.atom.io. Without them this package would be nowhere as mature as it is now.
 
 ## License
 This package is licensed under the GNU General Public License v3 (GPLv3), for a copy of this license see the [LICENSE.md](/LICENSE.md) file in the top level of this repository.
