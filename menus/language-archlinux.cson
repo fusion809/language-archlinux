@@ -10,16 +10,20 @@
             'command': 'pkgbuild:makepkg'
           }
           {
-            'label':   'Update SRCINFO'
-            'command': 'pkgbuild:mksrcinfo'
+            'label':   'Create an AUR package'
+            'command': 'pkgbuild:newpkg'
           }
           {
             'label':   'Run namcap'
             'command': 'pkgbuild:namcap'
           }
           {
-            'label':   'Update PKGBUILD'
+            'label':   'Update PKGBUILD Checksums'
             'command': 'pkgbuild:updpkgsums'
+          }
+          {
+            'label':   'Update SRCINFO'
+            'command': 'pkgbuild:mksrcinfo'
           }
         ]
       }

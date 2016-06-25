@@ -28,7 +28,7 @@ class LoadingView extends View
                         class: 'text-center loading loading-spinner-large inline-block'
                       @div
                         class: ''
-                        'Build in progress.'
+                        'Command is running, please wait...'
 
   hide: (event, element) =>
     @detach()

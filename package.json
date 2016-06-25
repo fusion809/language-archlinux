@@ -17,7 +17,8 @@
       "pkgbuild:makepkg",
       "pkgbuild:namcap",
       "pkgbuild:mksrcinfo",
-      "pkgbuild:updpkgsums"
+      "pkgbuild:updpkgsums",
+      "pkgbuild:newpkg"
     ],
     "atom-text-editor": [
       "core:save"

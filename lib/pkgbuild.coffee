@@ -1,4 +1,5 @@
 {exec} = require "child_process"
+pkgInputView = require('./pkgInputView')
 activeEditor = atom.workspace.getActiveTextEditor()
 notifications = atom.notifications
 LoadingView = null
@@ -38,3 +39,7 @@ module.exports =
             exec "updpkgsums #{filePath}", (err, stdout, stderr)->
                 notifications.addError stderr + "command is: updpkgsums #{filePath}", dismissable: true if err
                 notifications.addSuccess "PKGBUILD checksums updated" unless err
+
+    newpkg: ()->
+        @newpkgview = new pkgInputView()
+        
