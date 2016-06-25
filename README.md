@@ -6,6 +6,7 @@
 
 This package is essentially the Arch Linux equivalent to the [`language-gentoo`](https://github.com/aegypius/language-gentoo) package of Nicolas Laurent. It provides Atom commands for running a variety of different PKGBUILD commands. It previously provided syntax-highlighting for PKGBUILDs (with the help of the [`language-unix-shell`](https://github.com/fusion809/language-shellscript) package) although as of v0.3.0 this feature is now entirely provided by `language-unix-shell`.
 
+## Table of Contents
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Commands](#commands)
