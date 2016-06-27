@@ -18,7 +18,7 @@ module.exports =
     class pkgInputView extends View
         detaching: false
         @content: ->
-            @div class: 'command-palette', "Please enter the name of the AUR package you wish to create.", =>
+            @div class: 'command-palette', "Please enter your commit message, remember to keep it short and informative.", =>
                 @subview 'selectEditor', new TextEditorView(mini: true)
 
         initialize: ->
