@@ -1,5 +1,6 @@
 {exec}        = require("child_process")
 pkgInputView  = require('./pkgInputView')
+aurUpView     = require('./aurUpView')
 activeEditor  = atom.workspace.getActiveTextEditor()
 notifications = atom.notifications
 LoadingView   = null
@@ -42,3 +43,8 @@ module.exports =
 
     newpkg: ()->
         @newpkgview = new pkgInputView()
+
+    aurUpView: ()->
+        @updpkgsums
+        @mksrcinfo
+        @aurUpView = new aurUpView()

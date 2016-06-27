@@ -14,6 +14,7 @@ module.exports =
             "pkgbuild:namcap": -> namcap()
             "pkgbuild:updpkgsums": -> updpkgsums()
             "pkgbuild:newpkg": -> newpkg()
+            "pkgbuild:aurup": -> aurup()
             "core:save": ->
                 if (activeEditor && fileName == "PKGBUILD")
                     mksrcinfo() if atom.config.get 'language-archlinux.updateSrcInfoOnSave'

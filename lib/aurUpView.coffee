@@ -1,8 +1,6 @@
 {$, TextEditorView, View} = require 'atom-space-pen-views'
 path                      = require "path"
 {exec}                    = require "child_process"
-name                      = atom.config.get 'language-archlinux.username'
-email                     = atom.config.get 'language-archlinux.email'
 activeEditor              = atom.workspace.getActiveTextEditor()
 notifications             = atom.notifications
 LoadingView               = null
@@ -10,14 +8,11 @@ loadingView               = null
 
 if activeEditor
     filePath              = activeEditor.getPath().split(" ").join("\\ ")
-    preferredPath         = atom.config.get('language-archlinux.preferredPath')
-    if preferredPath
-      fileDirectory       = preferredPath
-    else
-      fileDirectory       = String(filePath).split('/')
-      fileName            = fileDirectory[fileDirectory.length - 1]
-      fileDirectory.pop()
-      fileDirectory       = fileDirectory.join("/")
+    fileDirectory         = String(filePath).split('/')
+    fileName              = fileDirectory[fileDirectory.length - 1]
+    fileDirectory.pop()
+    fileDirectory         = fileDirectory.join("/")
+    pkg                   = fileDirectory.substring(0, fileDirectory.lastIndexOf('/'));
 
 module.exports =
     class pkgInputView extends View
@@ -39,25 +34,25 @@ module.exports =
 
         detach: ->
             return unless @hasParent()
-            @detaching          = true
+            @detaching = true
             selectEditorFocused = @selectEditor.isFocused
             @selectEditor.setText('')
             @panel.destroy()
             super
-            @detaching          = false
+            @detaching = false
 
         confirm: ->
           if activeEditor
-            pkg          = @selectEditor.getText()
+            commit = @selectEditor.getText()
             LoadingView ?= require "./loading-view"
             loadingView ?= new LoadingView()
-            dirname      = path.join(__dirname, '..')
+            dirname = path.join(__dirname, '..')
             loadingView.show()
-            exec "git clone ssh+git://aur@aur.archlinux.org/#{pkg}.git #{fileDirectory}/#{pkg} && if ! [ -f #{fileDirectory}/#{pkg}/PKGBUILD ]; then cp #{dirname}/resources/PKGBUILD #{fileDirectory}/#{pkg}/PKGBUILD && sed -i -e 's/<%-PKG-%>/#{pkg}/g' -e 's/<%-NAME-%>/#{name}/g' -e 's/<%-EMAIL-%>/#{email}/g' #{fileDirectory}/#{pkg}/PKGBUILD; fi", (err, stdout, stderr)->
+            exec "cd #{fileDirectory} && git add --all && git commit -m '#{commit}' && git push origin master", (err, stdout, stderr)->
               loadingView?.hide()
-              notifications.addError "#{err}", dismissable: true if err
-              notifications.addSuccess "#{pkg}'s AUR git repository has been cloned to #{fileDirectory}/#{pkg}" unless err
-              pkgpath = "#{fileDirectory}/#{pkg}/PKGBUILD"
+              notifications.addError "#{pkg} has not been updated successfully.\n#{err}", dismissable: true if err
+              notifications.addSuccess "#{pkg} has been updated in the <abbr title='Arch User Repository'>AUR</abbr>." unless err
+              pkgpath = "#{fileDirectory}/PKGBUILD"
               atom.workspace.open(pkgpath) unless err
             @detach()
 

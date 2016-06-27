@@ -2,7 +2,7 @@
   "name": "language-archlinux",
   "version": "0.4.0",
   "author": "Brenton Horne <brentonhorne77@gmail.com>",
-  "description": "Arch Linux development package",
+  "description": "Arch Linux development package, to be used when writing install files, PKGBUILDs and assorted other packaging files for Arch Linux.",
   "repository": {
     "type": "git",
     "url": "https://github.com/fusion809/language-archlinux"
@@ -18,7 +18,8 @@
       "pkgbuild:namcap",
       "pkgbuild:mksrcinfo",
       "pkgbuild:updpkgsums",
-      "pkgbuild:newpkg"
+      "pkgbuild:newpkg",
+      "pkgbuild:aurup"
     ],
     "atom-text-editor": [
       "core:save"
@@ -53,7 +54,13 @@
       "type": "string",
       "default": "",
       "title": "Your spam-safe email address",
-      "description": "Set the spam-safe (encoded) email address this package will use when you create a new PKGBUILD"
+      "description": "Set the spam-safe (encoded) email address this package will use when you create a new PKGBUILD."
+    },
+    "preferredPath": {
+      "type": "string",
+      "default": "",
+      "title": "Your AUR package directory",
+      "description": "The preferred path for where you want to clone your AUR repositories"
     }
   },
   "license": "GPL-3.0",
@@ -62,6 +69,11 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.5"
+  },
+  "package-dependencies": {
+    "language-ini-desktop": "^1.19.0",
+    "language-patch2": "fusion809/language-patch2",
+    "language-unix-shell": "^0.34.0"
   },
   "devDependencies": {
     "coffee-script": "^1.8.0"
