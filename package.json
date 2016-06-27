@@ -73,7 +73,7 @@
   "package-dependencies": {
     "language-ini-desktop": "^1.19.0",
     "language-patch2": "fusion809/language-patch2",
-    "language-unix-shell": "^0.34.0"
+    "language-unix-shell": "^0.34.2"
   },
   "devDependencies": {
     "coffee-script": "^1.8.0"
