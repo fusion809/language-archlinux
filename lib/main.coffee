@@ -1,8 +1,11 @@
 activeEditor      = atom.workspace.getActiveTextEditor()
 
 if activeEditor
-    fileDirectory = String(activeEditor.getPath().split(" ").join("\\ ")).split('/')
-    fileName      = fileDirectory[fileDirectory.length - 1].trim()
+  filePath      = activeEditor.getPath().split(" ").join("\\ ")
+  fileDirectory = String(filePath).split('/')
+  fileName      = fileDirectory[fileDirectory.length - 1]
+  fileDirectory.pop()
+  fileDirectory = fileDirectory.join("/")
 
 module.exports =
 
