@@ -1,7 +1,7 @@
 '.source.shell.pkgbuild':
   'Default PKGBUILD Template':
     'prefix': 'pkgd'
-    'body': '# Maintainer ${1}\n\npkgname=${2}\npkgver=${3}\npkgrel=${4}\npkgdesc="${5}"\narch=(\'i686\' \'x86_64\')\nlicense=(${7})\n\ndepends=(${8})\nmakedepends=(${9})\noptdepends=(${10})\n\ninstall=${11}.install\nsource=(${12})\nsha256sums=(${13})\n\nprepare() {\n cd $srcdir/$pkgname ${14}\n}\n\nbuild() {\n cd $srcdir/$pkgname ${15}\n}\n\npackage() {\n cd $srcdir/$pkgname ${16}\n}'
+    'body': '# Maintainer ${1}\n\npkgname=${2}\npkgver=${3}\npkgrel=${4}\npkgdesc="${5}"\narch=(\'i686\' \'x86_64\')\nlicense=(${7})\n\ndepends=(${8})\nmakedepends=(${9})\noptdepends=(${10})\nurl="${11}"\ninstall=${12}.install\nsource=(${13})\nsha256sums=(${14})\n\nprepare() {\n cd $srcdir/$pkgname ${15}\n}\n\nbuild() {\n cd $srcdir/$pkgname ${16}\n}\n\npackage() {\n cd $srcdir/$pkgname ${17}\n}'
   'Default pkgver Template':
     'prefix': 'pkgver'
     'body': 'pkgver() {\n  cd "${srcdir}/${pkgname}"\n  git describe --tags `git rev-list --tags --max-count=1`\n}'
