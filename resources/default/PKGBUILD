@@ -13,6 +13,7 @@ pkgver=                     # This is the package version of the PKGBUILD
 pkgrel=1                    # This is the revision number of the PKGBUILD. If this PKGBUILD is new it should be 1
 pkgdesc=""                  # Here you need to place a description of the package
 arch=('i686' 'x86_64')      # The supported architectures of this package
+url=""                      # URL to homepage.
 license=()                  # License of the package. Check /usr/share/licenses/common for the name of recognized licenses
 depends=()                  # Dependencies of the package. These packages are runtime dependencies for the package.
 makedepends=()              # Build dependencies of the package. These are not required to use the package once installed

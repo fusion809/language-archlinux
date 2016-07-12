@@ -1,11 +1,14 @@
-activeEditor      = atom.workspace.getActiveTextEditor()
+{$$, SelectListView}      = require 'atom-space-pen-views'
+path                      = require "path"
+activeEditor              = atom.workspace.getActiveTextEditor()
+cursor                    = activeEditor.getLastCursor()
 
 if activeEditor
-  filePath      = activeEditor.getPath().split(" ").join("\\ ")
-  fileDirectory = String(filePath).split('/')
-  fileName      = fileDirectory[fileDirectory.length - 1]
+  filePath                = activeEditor.getPath().split(" ").join("\\ ")
+  fileDirectory           = String(filePath).split('/')
+  fileName                = fileDirectory[fileDirectory.length - 1]
   fileDirectory.pop()
-  fileDirectory = fileDirectory.join("/")
+  fileDirectory           = fileDirectory.join("/")
 
 module.exports =
 
@@ -23,5 +26,6 @@ module.exports =
                     mksrcinfo() if atom.config.get 'language-archlinux.updateSrcInfoOnSave'
                     namcap() if atom.config.get 'language-archlinux.checkPKGBUILDOnSave'
                     updpkgsums() if atom.config.get 'language-archlinux.updateCheckSumsOnSave'
+
     deactivate: ->
     serialize: ->
