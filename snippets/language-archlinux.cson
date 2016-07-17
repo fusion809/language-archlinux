@@ -5,6 +5,9 @@
   'Default pkgver Template':
     'prefix': 'pkgver'
     'body': 'pkgver() {\n  cd "${srcdir}/${pkgname}"\n  git describe --tags `git rev-list --tags --max-count=1`\n}'
+  'git pkgver Template':
+    'prefix': 'pkgverg'
+    'body': 'pkgver() {\n  cd ${srcdir}/${_pkgname}\n  git rev-parse --short=7 HEAD\n}'
   'Default sourcegit Template':
     'prefix': 'source=(git'
     'body': 'source=("git+${url}.git#tag=${pkgver}")\nsha512sums=(\'SKIP\')'

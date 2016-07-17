@@ -19,7 +19,8 @@
       "pkgbuild:mksrcinfo",
       "pkgbuild:updpkgsums",
       "pkgbuild:newpkg",
-      "pkgbuild:aurup"
+      "pkgbuild:aurup",
+      "pkgbuild:docs"
     ],
     "atom-text-editor": [
       "core:save"

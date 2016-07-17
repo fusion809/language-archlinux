@@ -1,7 +1,8 @@
 'atom-text-editor':
   'f4': 'pkgbuild:newpkg'
   'f5': 'pkgbuild:makepkg'
-  'f6': 'pkgbuild:aurup'
-  'f7': 'pkgbuild:namcap'
-  'f8': 'pkgbuild:updpkgsums'
-  'f9': 'pkgbuild:mksrcinfo'
+  'f6': 'pkgbuild:docs'
+  'f7': 'pkgbuild:aurup'
+  'f8': 'pkgbuild:namcap'
+  'f9': 'pkgbuild:updpkgsums'
+  'f10': 'pkgbuild:mksrcinfo'

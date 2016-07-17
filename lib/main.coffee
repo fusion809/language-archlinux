@@ -13,7 +13,7 @@ if activeEditor
 module.exports =
 
     activate: (state) ->
-        {makepkg,mksrcinfo,namcap,updpkgsums,newpkg,aurup} = require "./pkgbuild"
+        {makepkg,mksrcinfo,namcap,updpkgsums,newpkg,aurup,pkgbuilddocs} = require "./pkgbuild"
         atom.commands.add 'atom-text-editor',
             "pkgbuild:makepkg": -> makepkg()
             "pkgbuild:mksrcinfo": -> mksrcinfo()
@@ -21,6 +21,7 @@ module.exports =
             "pkgbuild:updpkgsums": -> updpkgsums()
             "pkgbuild:newpkg": -> newpkg()
             "pkgbuild:aurup": -> aurup()
+            "pkgbuild:docs": -> pkgbuilddocs()
             "core:save": ->
                 if (activeEditor && fileName == "PKGBUILD")
                     mksrcinfo() if atom.config.get 'language-archlinux.updateSrcInfoOnSave'
