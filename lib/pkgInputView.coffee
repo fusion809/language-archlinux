@@ -25,10 +25,20 @@ module.exports =
         detaching: false
         @content: ->
           @div =>
-            @div "Please enter the name of the AUR package you wish to create."
+            @div "Please enter the name of the AUR package you wish to create.\n\n"
+            @span style: "font-weight: bold;", "Note"
+            @span ": it has \nto be all lower case, with no spaces, semicolons or full stops (also known as periods:"
+            @code "."
+            @span "). Dashes should be used to separate name \ncomponents normally separated by \nwhitespace. If your package is built from git sources it should have the "
+            @code "-git"
+            @span " suffix."
             @subview 'PKG', new TextEditorView(mini: true)
-            @div "Please enter the URL of the AUR package you wish to create."
+            @div "Please enter the URL of the AUR package you wish to create. If your package \nis built from git sources this URL should be to your package's upstream git repository."
             @subview 'URL', new TextEditorView(mini: true)
+            @label 'Escape (', style: 'float: left;'
+            @kbd   'Esc', style: 'float: left;'
+            @label ') to exit', style: 'float: left;'
+            @label 'Enter (\u21B5) to confirm', style: 'float: right;'
 
         initialize: ->
             atom.commands.add 'atom-text-editor', 'core:confirm', => @confirm()
