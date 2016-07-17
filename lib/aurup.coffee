@@ -3,9 +3,6 @@ aurUpView     = require('./aurUpView')
 mksrcinfo     = require('./mksrcinfo')
 updpkgsums    = require('./updpkgsums')
 activeEditor  = atom.workspace.getActiveTextEditor()
-notifications = atom.notifications
-LoadingView   = null
-loadingView   = null
 
 if activeEditor
     filePath      = activeEditor.getPath().split(" ").join("\\ ")

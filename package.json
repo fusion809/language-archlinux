@@ -73,12 +73,14 @@
     "space-pen": "^5.1.0",
     "text-buffer": "8.5.0",
     "underscore-plus": "1.6.6",
-    "event-kit": "1.5.0"
+    "path": "0.12.7",
+    "event-kit": "1.5.0",
+    "space-pen": "^5.1.2"
   },
   "package-dependencies": {
-    "language-ini-desktop": "^1.19.0",
+    "language-ini-desktop": "^1.18.3",
     "language-patch2": "fusion809/language-patch2",
-    "language-unix-shell": "^0.34.2"
+    "language-unix-shell": "^0.37.3"
   },
   "devDependencies": {
     "coffee-script": "^1.8.0"
