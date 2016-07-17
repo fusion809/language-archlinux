@@ -1,4 +1,4 @@
-# Maintainer <%-NAME-%> <%-EMAIL-%>
+# Maintainer <NAME> <<EMAIL>>
 # The maintainer's email address should be encoded appropriately,
 # with @ replaced with "at" and . replaced with "dot", for example
 
@@ -6,7 +6,7 @@
 # Variables other than the ones mentioned below (e.g., some PKGBUILDs
 # include a _pkgname variable) should have an underscore (_) before them
 
-pkgname=<%-PKG-%>           # This is the name of the package. It can be an array of multiple pkgnames,
+pkgname=<PKG>           # This is the name of the package. It can be an array of multiple pkgnames,
                             # but for each pkgname a separate package() function should be defined.
 
 pkgver=                     # This is the package version of the PKGBUILD
@@ -18,7 +18,7 @@ license=()                  # License of the package. Check /usr/share/licenses/
 depends=()                  # Dependencies of the package. These packages are runtime dependencies for the package.
 makedepends=()              # Build dependencies of the package. These are not required to use the package once installed
 optdepends=()               # Optional (recommended) dependencies
-install=<%-PKG-%>.install   # Install file, which is not absolutely necessary.
+install=<PKG>.install   # Install file, which is not absolutely necessary.
 source=()                   # Source file(s), like patches and the upstream package source. If your upstream source is a git
                             # repository you may wish to include a pkgver() function before the prepare() function
 sha256sums=()               # checksums, permissible alternative checksum variables include md5sums, sha1sums and sha512sums

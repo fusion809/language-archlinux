@@ -1,7 +1,4 @@
-{$$, SelectListView}      = require 'atom-space-pen-views'
-path                      = require "path"
 activeEditor              = atom.workspace.getActiveTextEditor()
-cursor                    = activeEditor.getLastCursor()
 
 if activeEditor
   filePath                = activeEditor.getPath().split(" ").join("\\ ")
@@ -13,7 +10,13 @@ if activeEditor
 module.exports =
 
     activate: (state) ->
-        {makepkg,mksrcinfo,namcap,updpkgsums,newpkg,aurup,pkgbuilddocs} = require "./pkgbuild"
+        {makepkg}      = require "./makepkg"
+        {mksrcinfo}    = require "./mksrcinfo"
+        {namcap}       = require "./namcap"
+        {pkgbuilddocs} = require "./pkgbuilddocs"
+        {updpkgsums}   = require "./updpkgsums"
+        {aurup}        = require "./aurup"
+        {newpkg}       = require "./newpkg"
         atom.commands.add 'atom-text-editor',
             "pkgbuild:makepkg": -> makepkg()
             "pkgbuild:mksrcinfo": -> mksrcinfo()

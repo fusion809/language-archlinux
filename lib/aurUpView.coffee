@@ -1,4 +1,5 @@
-{$, TextEditorView, View} = require 'atom-space-pen-views'
+{View}                    = require 'space-pen'
+{TextEditorView}          = require 'atom-space-pen-views'
 path                      = require "path"
 {exec}                    = require "child_process"
 activeEditor              = atom.workspace.getActiveTextEditor()
@@ -18,7 +19,7 @@ module.exports =
     class pkgInputView extends View
         detaching: false
         @content: ->
-            @div class: 'command-palette', "Please enter your commit message, remember to keep it short and informative.", =>
+            @div "Please enter your commit message, remember to keep it short and informative.", =>
                 @subview 'selectEditor', new TextEditorView(mini: true)
 
         initialize: ->

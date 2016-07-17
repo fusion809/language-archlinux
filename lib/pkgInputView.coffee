@@ -1,4 +1,5 @@
-{$, TextEditorView, View} = require 'atom-space-pen-views'
+{View}                    = require 'space-pen'
+{TextEditorView}          = require 'atom-space-pen-views'
 path                      = require "path"
 {exec}                    = require "child_process"
 name                      = atom.config.get 'language-archlinux.username'
@@ -23,9 +24,11 @@ module.exports =
     class pkgInputView extends View
         detaching: false
         @content: ->
-            @div class: 'command-palette', "Please enter the name of the AUR package you wish to create.", =>
-                @subview 'PKG', new TextEditorView(mini: true)
-                @subview 'URL', new TextEditorView(mini: true)
+          @div =>
+            @div "Please enter the name of the AUR package you wish to create."
+            @subview 'PKG', new TextEditorView(mini: true)
+            @div "Please enter the URL of the AUR package you wish to create."
+            @subview 'URL', new TextEditorView(mini: true)
 
         initialize: ->
             atom.commands.add 'atom-text-editor', 'core:confirm', => @confirm()
