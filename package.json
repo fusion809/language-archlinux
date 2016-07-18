@@ -1,6 +1,6 @@
 {
   "name": "language-archlinux",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "author": "Brenton Horne <brentonhorne77@gmail.com>",
   "description": "Arch Linux development package, to be used when writing install files, PKGBUILDs and assorted other packaging files for Arch Linux.",
   "repository": {
