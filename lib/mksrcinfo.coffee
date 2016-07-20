@@ -12,6 +12,6 @@ if activeEditor
 module.exports =
     mksrcinfo: ()->
         if activeEditor && /PKGBUILD$/.test filePath
-            exec "cd #{fileDirectory} && mksrcinfo", (err, stdout, stderr)->
+            exec "cd #{fileDirectory} && makepkg --printsrcinfo > .SRCINFO", (err, stdout, stderr)->
                 notifications.addError stderr + "cd #{fileDirectory} && mksrcinfo", dismissable: true if err
                 notifications.addSuccess ".SRCINFO updated" unless err

@@ -20,7 +20,6 @@ Beware that you will need to have the following Linux packages installed in orde
 * `git`
 * `namcap`
 * `pacman` &mdash; which, of course, means you should be operating on Arch Linux or another platform that uses the pacman package manager.
-* `pkgbuild-introspection`
 
 It also requires the `language-unix-shell` package to be installed, if you have only the [`language-shellscript`](https://github.com/atom/language-shellscript) package installed (which comes bundled with Atom) you may find some of its syntax-highlighting features will be missing. I would also recommend you install the [`dark-bint-syntax`](https://github.com/Murriouz/dark-bint-syntax) theme, as it complements its syntax-highlighting.
 
@@ -28,7 +27,7 @@ It also requires the `language-unix-shell` package to be installed, if you have 
 To install all the Linux dependencies of this package (i.e., those installed using your Linux package manager, which should be pacman), along with its Atom dependencies/optional dependencies run (as standard non-root user):
 
 ```bash
-sudo pacman -S namcap pkgbuild-introspection --noconfirm
+sudo pacman -S namcap --noconfirm
 apm install language-unix-shell language-archlinux dark-bint-syntax --no-confirm
 ```
 
