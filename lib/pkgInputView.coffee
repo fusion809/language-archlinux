@@ -20,7 +20,7 @@ if activeEditor
       fileDirectory.pop()
       fileDirectory       = fileDirectory.join("/")
 
-module.exports =
+module.exports            =
     class pkgInputView extends View
         detaching: false
         @content: ->
@@ -53,23 +53,23 @@ module.exports =
 
         detach: ->
             return unless @hasParent()
-            @detaching          = true
-            PKGFocused          = @PKG.isFocused
-            URLFocused          = @URL.isFocused
+            @detaching    = true
+            PKGFocused    = @PKG.isFocused
+            URLFocused    = @URL.isFocused
             @PKG.setText('')
             @URL.setText('')
             @panel.destroy()
             super
-            @detaching          = false
+            @detaching    = false
 
         confirm: ->
           if activeEditor
-            pkg          = @PKG.getText()
-            _pkg         = pkg.replace("-git", "")
-            url          = @URL.getText()
-            LoadingView ?= require "./loading-view"
-            loadingView ?= new LoadingView()
-            dirname      = path.join(__dirname, '..')
+            pkg           = @PKG.getText()
+            _pkg          = pkg.replace("-git", "")
+            url           = @URL.getText()
+            LoadingView  ?= require "./loading-view"
+            loadingView  ?= new LoadingView()
+            dirname       = path.join(__dirname, '..')
             loadingView.show()
             if pkg != _pkg
               exec "git clone ssh+git://aur@aur.archlinux.org/#{pkg}.git #{fileDirectory}/#{pkg} && if ! [ -f #{fileDirectory}/#{pkg}/PKGBUILD ]; then cp #{dirname}/resources/git/PKGBUILD #{fileDirectory}/#{pkg}/PKGBUILD && sed -i -e 's/<PKG>/#{pkg}/g' -e 's|<NAME>|#{name}|g' -e 's|<EMAIL>|#{email}|g' -e 's/<\_PKG>/#{_pkg}/g' -e 's|<URL>|#{url}|g' #{fileDirectory}/#{pkg}/PKGBUILD; fi", (err, stdout, stderr)->
@@ -88,7 +88,7 @@ module.exports =
             @detach()
 
         attach: ->
-            @panel ?= atom.workspace.addModalPanel(item: this)
+            @panel       ?= atom.workspace.addModalPanel(item: this)
             @panel.show()
             @PKG.focus()
             @URL.focus()

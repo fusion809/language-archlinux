@@ -1,6 +1,6 @@
 {View, TextEditorView} = require 'atom-space-pen-views'
 
-module.exports =
+module.exports         =
 class LoadingView extends View
   @content: ->
     @div

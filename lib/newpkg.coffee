@@ -1,4 +1,4 @@
-pkgInputView  = require('./pkgInputView')
-module.exports =
+pkgInputView        = require('./pkgInputView')
+module.exports      =
     newpkg: ()->
         @newpkgview = new pkgInputView()

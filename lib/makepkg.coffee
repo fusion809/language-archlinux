@@ -1,17 +1,17 @@
-{exec}        = require("child_process")
-activeEditor  = atom.workspace.getActiveTextEditor()
-notifications = atom.notifications
-LoadingView   = null
-loadingView   = null
+{exec}                   = require("child_process")
+activeEditor             = atom.workspace.getActiveTextEditor()
+notifications            = atom.notifications
+LoadingView              = null
+loadingView              = null
 
 if activeEditor
-    filePath      = activeEditor.getPath().split(" ").join("\\ ")
-    fileDirectory = String(filePath).split('/')
-    fileName      = fileDirectory[fileDirectory.length - 1]
+    filePath             = activeEditor.getPath().split(" ").join("\\ ")
+    fileDirectory        = String(filePath).split('/')
+    fileName             = fileDirectory[fileDirectory.length - 1]
     fileDirectory.pop()
-    fileDirectory = fileDirectory.join("/")
+    fileDirectory        = fileDirectory.join("/")
 
-module.exports =
+module.exports           =
     makepkg: ()->
         if activeEditor && /PKGBUILD$/.test filePath
             LoadingView ?= require "./loading-view"

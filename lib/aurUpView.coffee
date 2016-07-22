@@ -1,21 +1,21 @@
-{View}                    = require 'space-pen'
-{TextEditorView}          = require 'atom-space-pen-views'
-path                      = require "path"
-{exec}                    = require "child_process"
-activeEditor              = atom.workspace.getActiveTextEditor()
-notifications             = atom.notifications
-LoadingView               = null
-loadingView               = null
+{View}                          = require 'space-pen'
+{TextEditorView}                = require 'atom-space-pen-views'
+path                            = require "path"
+{exec}                          = require "child_process"
+activeEditor                    = atom.workspace.getActiveTextEditor()
+notifications                   = atom.notifications
+LoadingView                     = null
+loadingView                     = null
 
 if activeEditor
-    filePath              = activeEditor.getPath().split(" ").join("\\ ")
-    fileDirectory         = String(filePath).split('/')
-    fileName              = fileDirectory[fileDirectory.length - 1]
+    filePath                    = activeEditor.getPath().split(" ").join("\\ ")
+    fileDirectory               = String(filePath).split('/')
+    fileName                    = fileDirectory[fileDirectory.length - 1]
     fileDirectory.pop()
-    fileDirectory         = fileDirectory.join("/")
-    pkg                   = fileDirectory.substring(0, fileDirectory.lastIndexOf('/'));
+    fileDirectory               = fileDirectory.join("/")
+    pkg                         = fileDirectory.substring(0, fileDirectory.lastIndexOf('/'));
 
-module.exports =
+module.exports                  =
     class pkgInputView extends View
         detaching: false
         @content: ->
@@ -35,29 +35,29 @@ module.exports =
 
         detach: ->
             return unless @hasParent()
-            @detaching = true
+            @detaching          = true
             selectEditorFocused = @selectEditor.isFocused
             @selectEditor.setText('')
             @panel.destroy()
             super
-            @detaching = false
+            @detaching          = false
 
         confirm: ->
           if activeEditor
             commit = @selectEditor.getText()
-            LoadingView ?= require "./loading-view"
-            loadingView ?= new LoadingView()
-            dirname = path.join(__dirname, '..')
+            LoadingView        ?= require "./loading-view"
+            loadingView        ?= new LoadingView()
+            dirname             = path.join(__dirname, '..')
             loadingView.show()
             exec "cd #{fileDirectory} && git add --all && git commit -m '#{commit}' && git push origin master", (err, stdout, stderr)->
               loadingView?.hide()
               notifications.addError "#{pkg} has not been updated successfully.\n#{err}", dismissable: true if err
               notifications.addSuccess "#{pkg} has been updated in the <abbr title='Arch User Repository'>AUR</abbr>." unless err
-              pkgpath = "#{fileDirectory}/PKGBUILD"
+              pkgpath           = "#{fileDirectory}/PKGBUILD"
               atom.workspace.open(pkgpath) unless err
             @detach()
 
         attach: ->
-            @panel ?= atom.workspace.addModalPanel(item: this)
+            @panel             ?= atom.workspace.addModalPanel(item: this)
             @panel.show()
             @selectEditor.focus()

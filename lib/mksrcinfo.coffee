@@ -1,6 +1,6 @@
-{exec}        = require("child_process")
-activeEditor  = atom.workspace.getActiveTextEditor()
-notifications = atom.notifications
+{exec}            = require("child_process")
+activeEditor      = atom.workspace.getActiveTextEditor()
+notifications     = atom.notifications
 
 if activeEditor
     filePath      = activeEditor.getPath().split(" ").join("\\ ")
@@ -9,7 +9,7 @@ if activeEditor
     fileDirectory.pop()
     fileDirectory = fileDirectory.join("/")
 
-module.exports =
+module.exports    =
     mksrcinfo: ()->
         if activeEditor && /PKGBUILD$/.test filePath
             exec "cd #{fileDirectory} && makepkg --printsrcinfo > .SRCINFO", (err, stdout, stderr)->

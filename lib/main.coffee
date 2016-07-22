@@ -7,16 +7,16 @@ if activeEditor
   fileDirectory.pop()
   fileDirectory           = fileDirectory.join("/")
 
-module.exports =
+module.exports            =
 
     activate: (state) ->
-        {makepkg}      = require "./makepkg"
-        {mksrcinfo}    = require "./mksrcinfo"
-        {namcap}       = require "./namcap"
-        {pkgbuilddocs} = require "./pkgbuilddocs"
-        {updpkgsums}   = require "./updpkgsums"
-        {aurup}        = require "./aurup"
-        {newpkg}       = require "./newpkg"
+        {makepkg}         = require "./makepkg"
+        {mksrcinfo}       = require "./mksrcinfo"
+        {namcap}          = require "./namcap"
+        {pkgbuilddocs}    = require "./pkgbuilddocs"
+        {updpkgsums}      = require "./updpkgsums"
+        {aurup}           = require "./aurup"
+        {newpkg}          = require "./newpkg"
         atom.commands.add 'atom-text-editor',
             "pkgbuild:makepkg": -> makepkg()
             "pkgbuild:mksrcinfo": -> mksrcinfo()

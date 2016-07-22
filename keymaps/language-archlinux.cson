@@ -1,3 +1,4 @@
+# Order based on menus/language-archlinux.cson
 'atom-text-editor':
   'f4': 'pkgbuild:newpkg'
   'f5': 'pkgbuild:makepkg'

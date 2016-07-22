@@ -2,6 +2,22 @@
   "name": "language-archlinux",
   "version": "0.8.4",
   "author": "Brenton Horne <brentonhorne77@gmail.com>",
+  "contributors": [
+    {
+      "name": "Bilal Elmoussaoui",
+      "email": "bil.elmoussaoui@gmail.com",
+      "url": "https://twitter.com/bil_moussaoui"
+    },
+    {
+      "name": "Holland Wilson",
+      "email": "stickfigureonfire@gmail.com"
+    },
+    {
+      "name": "Lee Dohm",
+      "email": "lee-dohm@github.com",
+      "url": "http://www.lee-dohm.com/"
+    }
+  ],
   "description": "Arch Linux development package, to be used when writing install files, PKGBUILDs and assorted other packaging files for Arch Linux.",
   "repository": {
     "type": "git",
