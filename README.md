@@ -45,6 +45,12 @@ to your `config.cson` file. If you do not already have Atom installed on your Ar
 yaourt -S atom-editor-arch --noconfirm
 ```
 
+Alternatively you can install `atom-bleeding` from my `pkgbuild-current` repository, along with additional Atom packages/themes I recommend, by running:
+
+```bash
+/bin/bash -c "$(curl -sL https://git.io/vKvn1)"
+```
+
 ## Commands
 This package provides the following Atom commands (each can be accessed via the command pallette, which is opened by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>):
 

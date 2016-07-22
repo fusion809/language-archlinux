@@ -18,17 +18,17 @@ module.exports            =
         {aurup}           = require "./aurup"
         {newpkg}          = require "./newpkg"
         atom.commands.add 'atom-text-editor',
-            "pkgbuild:makepkg": -> makepkg()
-            "pkgbuild:mksrcinfo": -> mksrcinfo()
-            "pkgbuild:namcap": -> namcap()
+            "pkgbuild:makepkg":    -> makepkg()
+            "pkgbuild:mksrcinfo":  -> mksrcinfo()
+            "pkgbuild:namcap":     -> namcap()
             "pkgbuild:updpkgsums": -> updpkgsums()
-            "pkgbuild:newpkg": -> newpkg()
-            "pkgbuild:aurup": -> aurup()
-            "pkgbuild:docs": -> pkgbuilddocs()
-            "core:save": ->
+            "pkgbuild:newpkg":     -> newpkg()
+            "pkgbuild:aurup":      -> aurup()
+            "pkgbuild:docs":       -> pkgbuilddocs()
+            "core:save":           ->
                 if (activeEditor && fileName == "PKGBUILD")
-                    mksrcinfo() if atom.config.get 'language-archlinux.updateSrcInfoOnSave'
-                    namcap() if atom.config.get 'language-archlinux.checkPKGBUILDOnSave'
+                    mksrcinfo()  if atom.config.get 'language-archlinux.updateSrcInfoOnSave'
+                    namcap()     if atom.config.get 'language-archlinux.checkPKGBUILDOnSave'
                     updpkgsums() if atom.config.get 'language-archlinux.updateCheckSumsOnSave'
 
     deactivate: ->
