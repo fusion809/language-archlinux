@@ -87,7 +87,7 @@
   "dependencies": {
     "atom-space-pen-views": "^2.0.5",
     "space-pen": "^5.1.2",
-    "text-buffer": "^8.5.0",
+    "text-buffer": "^9.2.3",
     "underscore-plus": "^1.6.6",
     "path": "^0.12.7",
     "event-kit": "^1.5.0"
