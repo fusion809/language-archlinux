@@ -2,6 +2,12 @@
   "name": "language-archlinux",
   "version": "0.8.8",
   "author": "Brenton Horne <brentonhorne77@gmail.com>",
+  "keywords": [
+    "archlinux",
+    "pkgbuild",
+    "packaging",
+    "linux"
+  ],
   "contributors": [
     {
       "name": "Bilal Elmoussaoui",
