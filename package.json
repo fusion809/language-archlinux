@@ -98,11 +98,7 @@
     "path": "^0.12.7",
     "event-kit": "^1.5.0"
   },
-  "package-dependencies": {
-    "language-ini-desktop": "^1.18.3",
-    "language-patch2": "fusion809/language-patch2",
-    "language-unix-shell": "^0.37.6"
-  },
+  "package-dependencies": {},
   "devDependencies": {
     "coffee-script": "^1.8.0"
   }
