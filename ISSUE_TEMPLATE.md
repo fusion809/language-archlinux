@@ -1,7 +1,7 @@
 ### Prerequisites
 * Does this error occur on Linux? If you are using another operating system, please note that this package is **only for Linux platforms with the pacman package manager**!
 * Are you running the [latest version of Atom](https://github.com/atom/atom/releases/latest)? If not, please upgrade and see if your bug still exists.
-* Did you [search](https://github.com/issues?q=is%3Aissue+user%3Afusion809+-repo%3Aterminal-fusion) through the previously reported issues reported for this repository?
+* Did you [search](https://github.com/issues?q=is%3Aissue+user%3Afusion809+-repo%3Alanguage-archlinux) through the previously reported issues reported for this repository?
 
 ### Description
 
