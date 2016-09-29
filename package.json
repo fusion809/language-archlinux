@@ -88,6 +88,7 @@
     }
   },
   "license": "GPL-3.0",
+  "licenseFilename": "LICENSE",
   "engines": {
     "atom": ">0.50.0"
   },
